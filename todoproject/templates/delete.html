@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="container">
+    <h2>Task Confirmation</h2>
+    <form method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+        <label>Are you sure the task is done?</label>
+      </div>
+      <button type="submit" class="btn btn-success btn-sm">Yes</button>
+      <a class="btn btn-warning btn-sm" href="{% url 'add' %}">No</a>
+    </form>
+  </div>
+
+{% endblock %}
